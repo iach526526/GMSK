@@ -187,7 +187,7 @@ def simulate_fsk_transmission(audio_signal, Fs=8000, noise=False, noise_level=0.
 
 
 # 進行模擬：如果檔案存在，讀取檔案，否則使用麥克風錄音
-input_file = "input.wav"
+input_file = "input_single.wav"
 Fs = 8000
 
 if os.path.exists(input_file):
