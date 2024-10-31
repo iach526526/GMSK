@@ -6,7 +6,11 @@
 pip3 install virtualenv
 python -m virtualenv gmsk
 ```
+進入虛擬環境(Windows)
+```
+.\gmsk\Scripts\activate
+```
 安裝套件
 ```
-pip -r requirements.txt
+pip install -r requirements.txt
 ```
