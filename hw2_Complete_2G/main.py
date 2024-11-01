@@ -129,7 +129,17 @@ def simulate_fsk_transmission(audio_signal, Fs=8000, noise=False, noise_level=0.
     # 交錯，並處理填充
     interleaved_bits, pad_size = interleave(encrypted_bits)
     print("Data interleaved.")
-
+    # 交錯後的資料
+    plt.figure(figsize=(10, 4))
+    plt.plot(interleaved_bits[:50], label="Interleaved Data")
+    plt.plot(encoded_bits[:50], label="not Interleaved yet  Data", linestyle='--', color='orange')
+    plt.title("Interleaved Data")
+    plt.xlabel("Sample Number") 
+    plt.ylabel("Amplitude") 
+    plt.grid(True)
+    plt.legend()    
+    plt.show()
+    
     # 生成並印出 CRC 校驗碼
     encoded_bits_crc = generate_crc(interleaved_bits)
     print("Generated CRC and appended to data.")
@@ -302,6 +312,7 @@ if restored_audio_signal_with_noise is not None and restored_audio_signal_no_noi
     plt.grid(True)
     plt.legend()
     plt.show()
+    
 
 else:
     print("Failed to restore audio due to CRC check failure or data corruption.")
